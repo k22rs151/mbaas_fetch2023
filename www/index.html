@@ -31,6 +31,15 @@
                     $("#message").html("Failed to create new object, with error code: " + JSON.stringify(err));
                 })
         }
+        function fetch(){
+            let TestClass= ncmb.DataStore("FetchTest");
+            TestClass.fetch()
+            .then(function(results){ 
+                let data=results.get("text");
+                let update=results.get("updateDate"); 
+                $("#message").html(data + ":" + update);
+            })
+        }
     </script>
 </head>
 
